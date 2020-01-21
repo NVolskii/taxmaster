@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Input values of this month</h1>
+    <form action="" method="POST" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.electricity.label }}<br>
+            {{ form.electricity(size=32) }}<br>
+            {% for error in form.electricity.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.hot_water.label }}<br>
+            {{ form.hot_water(size=32) }}<br>
+            {% for error in form.hot_water.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.cold_water.label }}<br>
+            {{ form.cold_water(size=32) }}<br>
+            {% for error in form.cold_water.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p> {{ form.submit }} </p>
+    </form>
+{% endblock %}

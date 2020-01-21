@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content%}
     <h1>Hello, man! In august</h1>
-    {% for tax in augu %}
-    <div><p>You spent {{ augu[tax] }} for {{ tax }}</p></div>
+    {% for bill in augu %}
+    <div><p>You spent {{ augu[bill] }} for {{ bill }}</p></div>
     {% endfor %}
 {% endblock %}
