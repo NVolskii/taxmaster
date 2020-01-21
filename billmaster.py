@@ -1,6 +1,10 @@
-from app import app, db
-from app.models import Tenant, MetersReader
+from app import create_app, db
+from app.models import User, MetersReader, TaxRate
+
+
+app = create_app()
+
 
 @app.shell_context_processor
 def make_shell_context():
-    return {'db': db, 'Tenant': Tenant, 'MetersReader': MetersReader}
+    return {'db': db, 'User': User, 'MetersReader': MetersReader, 'TaxRate': TaxRate}

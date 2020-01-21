@@ -8,9 +8,11 @@
     </head>
     <body>
         <div>Billmaster: 
-          <a href="{{ url_for('index') }}">Home</a>
-          <a href="{{ url_for('login') }}">Login</a>
-          <a href="{{ url_for('input') }}">Input</a>
+            <a href="{{ url_for('main.index') }}">Home</a>
+            <a href="{{ url_for('auth.login') }}">Login</a>
+            <a href="{{ url_for('auth.register') }}">Register</a>
+            <a href="{{ url_for('main.input') }}">Input</a>
+            <a href="{{ url_for('auth.logout') }}">Logout</a>
         </div>
         <hr>
         {% with messages = get_flashed_messages() %}
