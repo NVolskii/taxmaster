@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content%}
-    <h1>Hello, man! In august</h1>
-    {% for bill in augu %}
+    <h1>Hello, {{ current_user.username }}</h1>
+    {% for meter in meters_reader %}
     <div><p>You spent {{ augu[bill] }} for {{ bill }}</p></div>
     {% endfor %}
 {% endblock %}
