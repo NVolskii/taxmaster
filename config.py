@@ -7,6 +7,6 @@ load_dotenv(dotenv_path='./.env')
 
 
 class Config(object):
-    SECRET_KEY = os.environ.get("SECRET_KEY")
-    SQLALCHEMY_DATABASE_URI = os.environ.get("DB_URL")
-    SQLALCHEMY_TRACK_MODIFICATIONS = ('true' == os.environ.get("DB_TRACK_MODIFICATIONS"))
+    SECRET_KEY = os.getenv("SECRET_KEY")
+    SQLALCHEMY_DATABASE_URI = os.getenv("DB_URL") or 'sqlite:///' + os.path.join(basedir, 'app.db')
+    SQLALCHEMY_TRACK_MODIFICATIONS = ('true' == os.getenv("DB_TRACK_MODIFICATIONS"))

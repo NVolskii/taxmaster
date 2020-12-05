@@ -23,4 +23,4 @@ def input():
         flash(f'hot_water: {form.hot_water.data}')
         flash(f'cold_water: {form.cold_water.data}')
         return redirect(url_for('main.index'))
-    return render_template('input.html', title='Enter_values', form=form)
+    return render_template('main/input.html', title='Enter_values', form=form)
