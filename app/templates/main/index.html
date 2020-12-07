@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% block content%}
     <h1>Hello, {{ current_user.username }}</h1>
-    {% for meter in meters_reader %}
-    <div><p>You spent {{ augu[bill] }} for {{ bill }}</p></div>
-    {% endfor %}
+    <div>On {{ meter.date }}</div>
+    <div><p>You spent {{ meter.electricity }} for electricity</p></div>
+    <div><p>You spent {{ meter.hot_water }} for hot water</p></div>
+    <div><p>You spent {{ meter.cold_water }} for cold water</p></div>
 {% endblock %}
