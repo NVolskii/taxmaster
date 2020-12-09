@@ -4,7 +4,7 @@ from app import db
 from app.main import main_bp
 from app.main.forms import InputForm
 from flask_login import current_user, login_user, logout_user, login_required
-from app.models import User, MetersReader
+from app.models import User, Meter
 from datetime import datetime
 
 
@@ -12,7 +12,7 @@ from datetime import datetime
 @main_bp.route('/index')
 @login_required
 def index():
-    meter = MetersReader.query.filter_by(user_id=current_user.id).order_by(MetersReader.date.desc()).first()
+    meter = Meter.query.filter_by(user_id=current_user.id).order_by(MetersReader.date.desc()).first()
     return render_template('main/index.html', title='Home', meter=meter)
 
 @login_required
@@ -24,7 +24,7 @@ def input():
         flash(f'electricity: {form.electricity.data}')
         flash(f'hot_water: {form.hot_water.data}')
         flash(f'cold_water: {form.cold_water.data}')
-        meter = MetersReader(
+        meter = Meter(
             date = datetime.today(),
             cold_water = form.cold_water.data,
             hot_water = form.hot_water.data,

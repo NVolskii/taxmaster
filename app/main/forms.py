@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from flask_login import current_user
 from app import db
-from app.models import MetersReader
+# from app.models import Meter
 from wtforms import SubmitField, FloatField
 from wtforms.validators import DataRequired
 
